@@ -1,0 +1,56 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 25, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "tray"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "clock",
+        "custom/power"
+    ],
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%d %B %Y }</big>"
+    },
+    "cpu": {
+        "format": "CPU {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "MEM {}%",
+	"tooltip": false
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "NET {essid}",
+        "format-disconnected": "NET none",
+	"tooltip": false
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "VOL {volume}%",
+        "format-muted": "OFF {format_source}"
+    },
+    "custom/power": {
+        "format": "OFF",
+	"on-click": "shutdown now",
+	"tooltip": false
+    }
+}
